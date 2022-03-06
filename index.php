@@ -97,6 +97,7 @@ require("./mysql.php");
         </div>
         <div class="content">
             <p>为防止恶意提交，会将提交人的 IP 不可逆加密后存储至数据库。</p>
+            <p>友情提示：此处的命名是自由的，没有实际参考价值，请勿轻信。</p>
         </div>
         <div class="bottom">
             <div class="word">

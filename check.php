@@ -94,7 +94,7 @@ require("./mysql.php");
                             </div>
                             <div class="editItem">
                                 <div class="name">回复时间</div>
-                                <input disabled id="replytime" name="replytime" class="val" value="<?php echo date("Y-m-d H:i:s", $db->getrow($sql)["replytime"]); ?>">
+                                <input disabled id="replytime" name="replytime" class="val" value="<?php echo date("Y-m-d H:i:s", $db->getrow($sql)["reply_time"]); ?>">
                             </div>
                         </div>
                 <?php
