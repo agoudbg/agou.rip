@@ -43,7 +43,7 @@ require("./mysql.php");
                         <input id="email" name="email" class="val" placeholder="选填，不会被公开" onkeydown="if(event.keyCode==13){return false;}">
                     </div>
                     <div class="editItem">
-                        <textarea id="text" name="text" class="val" placeholder="吐槽什么呢…"></textarea>
+                        <textarea id="text" name="text" class="val" placeholder="吐槽什么呢…" autofocus></textarea>
                     </div>
                     <div class="editItem">
                         <label class="checkbox" for="public" tabindex="0" onkeydown="if(event.keyCode==32){public.click();return false;}">

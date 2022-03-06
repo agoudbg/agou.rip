@@ -35,7 +35,7 @@ require("./mysql.php");
                 </p>
                 <div class="editDiv">
                     <div class="editItem">
-                        <input id="msgid" name="msgid" class="val" placeholder="凭据" value="<?php echo (isset($_GET["msgid"]) ? $_GET["msgid"] : ""); ?>">
+                        <input id="msgid" name="msgid" class="val" placeholder="凭据" autofocus value="<?php echo (isset($_GET["msgid"]) ? $_GET["msgid"] : ""); ?>">
                     </div>
                 </div>
             </div>
