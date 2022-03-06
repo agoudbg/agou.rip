@@ -1,0 +1,121 @@
+html{
+    font-size: 1.12px;
+}
+body{
+    --page-bgcolor: #F6F6F6;
+    --visible-color: rgb(92, 92, 92);
+    --scroller-grey: #c8c8c854;
+}
+@media (prefers-color-scheme: dark) {
+    body{
+        --page-bgcolor: #010101;
+        --header-bgcolor: #292929;
+        --scroller-grey: #85858536;
+    }
+}
+body{
+    background: var(--page-bgcolor);
+    max-width: 800rem;
+    margin: auto;
+}
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    word-break: break-word;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+*[scroll=true], *[scroll=true] *{
+    scroll-behavior: smooth;
+}
+*:focus-visible{
+    outline: 4rem solid rgba(0,125,250,0.6);
+    outline-offset: 1rem;
+}
+.status{
+    margin-bottom: 8rem;
+    color: rgb(255, 0, 0);
+}
+.editDiv{
+    display: flex;
+    flex-direction: column;
+}
+.editItem{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10rem;
+}
+.editItem .name{
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-right: 0.7em;
+}
+.editItem .val{
+    flex-grow: 1;
+    flex-shrink: 1;
+    background: none;
+    color: var(--card);
+    font-size: 14rem;
+}
+.editItem textarea{
+    height: 5em;
+}
+.checkbox input, .checkbox i{
+    display: none;
+    position: relative;
+    top: 2rem;
+}
+.checkbox input:checked + i.false, .checkbox .true{
+    display: none;
+}
+.checkbox input:checked + i.false + i.true, .checkbox input:not(:checked) + i.false{
+    display: inline-block;
+}
+.bigButton{
+    color: var(--card-title-button)!important;
+    padding: 8rem 13rem!important;
+    font-size: 13rem!important;
+    background-color: var(--card-title-button-bgcolor)!important;
+}
+.msgid{
+    font-size: 20rem;
+    user-select: all;
+    -webkit-user-select: all;
+    -moz-user-select: all;
+}
+.material-icons{
+    font-family: 'Material Icons';
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    font-style: normal;
+}
+@font-face{
+    font-weight: 400;
+    font-family: 'Material Icons';
+    font-style: normal;
+    src: url('../fonts/MaterialIcons-Regular.woff2') format('woff2');
+}
+::-webkit-scrollbar{
+    width: 7rem;
+    height: 7rem; 
+}
+::-webkit-scrollbar:hover{
+    width: 7rem;
+    height: 7rem; 
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10rem;
+    background: var(--scroller-grey);
+}
+body *[scroll=hidden]::-webkit-scrollbar-thumb{
+    background: none;
+}
+::-webkit-scrollbar-track{
+    border-radius: 10rem;
+    width: 0;
+    opacity: 0;
+}

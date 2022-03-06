@@ -1,0 +1,141 @@
+body{
+    --card-bgcolor: var(--page-bgcolor);
+    --card-title: #000;
+    --card-title-button: rgb(24, 151, 255);
+    --card-title-button-bgcolor: rgb(237, 244, 248);
+    --card-single-bgcolor: #fff;
+    --card: #000;
+    --card-button: #444;
+    --card-button-bgcolor: rgb(241, 241, 241);
+    --card-bottom: rgb(107, 107, 107);
+    --card-bottom-button-hover: rgb(44, 44, 44);
+}
+@media (prefers-color-scheme: dark) {
+    body{
+        --card-bgcolor: var(--page-bgcolor);
+        --card-title: rgb(253, 253, 253);
+        --card-title-button: rgb(24, 151, 255);
+        --card-title-button-bgcolor: rgb(75, 75, 75);
+        --card-single-bgcolor: #1C1C1D;
+        --card: rgb(235, 235, 235);
+        --card-button: rgb(107, 107, 107);
+        --card-button-bgcolor: rgb(65, 65, 65);
+        --card-bottom: rgb(158, 158, 158);
+        --card-bottom-button-hover: rgb(190, 190, 190);
+    }
+}
+.cardBox .titleBox{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 33rem 21rem 13rem 21rem;
+}
+.cardBox .titleBox h1{
+    font-size: 24rem;
+    font-weight: bold;
+    color: var(--card-title);
+}
+.cardBox .titleBox .buttons{
+    flex-shrink: 0;
+}
+.cardBox .titleBox .buttons button{
+    margin: 0 3rem 2rem 3rem;
+    padding: 9rem;
+    font-size: 15rem;
+    width: 35rem;
+    height: 35rem;
+    color: var(--card-title-button);
+    background-color: var(--card-title-button-bgcolor);
+    border-radius: 99rem;
+}
+.cardBox .card{
+    display: flex;
+    flex-direction: column;
+    margin: 10rem 10rem;
+    padding: 13rem 15rem;
+    font-size: 14rem;
+    line-height: 1.5;
+    color: var(--card);
+    background-color: var(--card-single-bgcolor);
+    border-radius: 6rem;
+}
+.cardBox .card.clickable{
+    filter: none;
+    transform: none;
+    transition: transform 0.2s;
+}
+.cardBox .card.clickable:hover, .cardBox .card.clickable:focus-visible{
+    filter: brightness(0.95);
+    transition: filter 0.2s, transfrm 0.2s;
+}
+body[theme=dark] .cardBox .card.clickable:hover, .cardBox .card.clickable:focus-visible{
+        filter: brightness(0.8);
+        transition: filter 0.2s, transfrm 0.2s;  
+}
+.cardBox .card.clickable:active{
+    /* transform: scale(0.992); */
+    transition: transform 0.2s;
+}
+.cardBox .card .header{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-bottom: 7rem;
+    justify-content: space-between;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.cardBox .card .header .name{
+    font-weight: bold;
+}
+.cardBox .card .header .h2{
+    font-size: 20rem;
+    font-weight: bold;
+}
+.cardBox .card .header .buttons{
+    flex-shrink: 0;
+}
+.cardBox .card .header .buttons button{
+    margin: 0 -6rem 0rem 6rem;
+    padding: 4rem;
+    font-size: 12rem;
+    width: 20rem;
+    height: 20rem;
+    color: var(--card-button);
+    background: none;
+    border-radius: 99rem;
+}
+.cardBox .card .header .buttons button:hover, .cardBox .card .header .buttons button:focus-visible{
+    background-color: var(--card-button-bgcolor);
+}
+.cardBox .card .bottom{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: 7rem;
+    justify-content: space-between;
+    color: var(--card-bottom);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    font-size: 12rem;
+}
+.cardBox .card .bottom .name{
+    font-weight: bold;
+}
+.cardBox .card .bottom .buttons{
+    flex-shrink: 0;
+}
+.cardBox .card .bottom .buttons button{
+    margin: 0 0rem 0rem 4rem;
+    padding: 0rem;
+    font-size: 12rem;
+    color: var(--card-bottom);
+    background: none;
+    border-radius: 99rem;
+}
+.cardBox .card .bottom .buttons button:hover, .cardBox .card .header .buttons button:focus-visible{
+    color: var(--card-bottom-button-hover);
+}
