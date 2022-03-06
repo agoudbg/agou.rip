@@ -14,18 +14,6 @@ if (!isset($_POST["text"]) || $_POST["text"] == "") {
         die(header("Location:index.php?tip=发送间隔过短，请稍后再发送。"));
     }
     $msgid = newRandomKey();
-    print_r((array(
-        "id" => $msgid,
-        "nick" => cleanHTMLTag(addslashes($_POST["nick"])),
-        "email" => cleanHTMLTag(addslashes($_POST["email"])),
-        "text" => cleanHTMLTag(addslashes($_POST["text"])),
-        "public" => ($_POST["public"] == "on" ? 1 : 0),
-        "time" => time(),
-        "ip" => sha256(getIP()),
-        "reply" => "",
-        "reply_time" => 0,
-        "deleted" => 0
-    )));
     $db->insert(
         array(
             "id" => $msgid,
@@ -41,7 +29,7 @@ if (!isset($_POST["text"]) || $_POST["text"] == "") {
         ),
         "post"
     );
-    // header("Location:success.php?msgid=" . $msgid);
+    header("Location:success.php?msgid=" . $msgid);
 }
 
 function cleanHTMLTag($text)
