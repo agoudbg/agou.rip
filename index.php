@@ -77,7 +77,7 @@ require("./mysql.php");
             <div class="content">
                 <p><b><?php echo $value["nick"]; ?></b></p>
                 <p><?php echo str_replace("\n", "<br />", $value["text"]); ?></p>
-                <?php if ($value["reply"] != "") { ?><p style="margin-top: .5em;"><b><?php echo my_name; ?>回复</b></p>
+                <?php if ($value["reply"] != "") { ?><p style="margin-top: .5em;"><b><?php echo my_name; ?> 回复</b></p>
                     <p><?php echo str_replace("\n", "<br />", $value["reply"]); ?></p><?php }; ?>
             </div>
             <div class="bottom">
