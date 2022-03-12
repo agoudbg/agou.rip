@@ -65,11 +65,11 @@ require("./mysql.php");
                     <div class="editDiv">
                         <div class="editItem">
                             <div class="name">昵称</div>
-                            <input disabled id="nick" name="nick" class="val" placeholder="未提供" value="<?php echo $db->getrow($sql)["nick"]; ?>">
+                            <input readonly id="nick" name="nick" class="val" placeholder="未提供" value="<?php echo $db->getrow($sql)["nick"]; ?>">
                         </div>
                         <div class="editItem">
                             <div class="name">邮箱</div>
-                            <input disabled id="email" name="email" class="val" placeholder="未提供" value="<?php echo $db->getrow($sql)["email"]; ?>">
+                            <input readonly id="email" name="email" class="val" placeholder="未提供" value="<?php echo $db->getrow($sql)["email"]; ?>">
                         </div>
                         <div class="editItem">
                             <div class="name">内容</div>
@@ -77,11 +77,11 @@ require("./mysql.php");
                         </div>
                         <div class="editItem">
                             <div class="name">回复后公开</div>
-                            <input disabled id="public" name="public" class="val" value="<?php echo ($db->getrow($sql)["public"] == 1 ? "是" : "否"); ?>">
+                            <input readonly id="public" name="public" class="val" value="<?php echo ($db->getrow($sql)["public"] == 1 ? "是" : "否"); ?>">
                         </div>
                         <div class="editItem">
                             <div class="name">发送时间</div>
-                            <input disabled id="time" name="time" class="val" value="<?php echo date("Y-m-d H:i:s", $db->getrow($sql)["time"]); ?>">
+                            <input readonly id="time" name="time" class="val" value="<?php echo date("Y-m-d H:i:s", $db->getrow($sql)["time"]); ?>">
                         </div>
                     </div>
                     <?php
@@ -94,7 +94,7 @@ require("./mysql.php");
                             </div>
                             <div class="editItem">
                                 <div class="name">回复时间</div>
-                                <input disabled id="replytime" name="replytime" class="val" value="<?php echo date("Y-m-d H:i:s", $db->getrow($sql)["reply_time"]); ?>">
+                                <input readonly id="replytime" name="replytime" class="val" value="<?php echo date("Y-m-d H:i:s", $db->getrow($sql)["reply_time"]); ?>">
                             </div>
                         </div>
                 <?php

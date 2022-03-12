@@ -8,7 +8,7 @@ require("./mysql.php");
 
 <head>
     <meta charset="utf-8" />
-    <title><?php echo my_name; ?>.rip 管理后台</title>
+    <title><?php echo site_name; ?> 管理后台</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
     <meta name='apple-mobile-web-app-capable' content='yes'>
     <meta name='apple-mobile-web-app-status-bar-style' content='black'>
@@ -19,7 +19,7 @@ require("./mysql.php");
 
 <body class="cardBox">
     <div class="titleBox">
-        <h1><?php echo my_name; ?>.rip 管理后台</h1>
+        <h1><?php echo site_name; ?> 管理后台</h1>
         <div class="buttons">
             <button onclick="window.location.href='index.php'"><i class="material-icons">home</i></button>
         </div>

@@ -17,3 +17,5 @@ define("mysql_database", "main");
 // MySQL 服务器数据库
 define("time_limit", 600);
 // 发送最短间隔
+define("admin_password", "123456");
+// 管理员密码
