@@ -53,13 +53,13 @@ require("./mysql.php");
                             <i class="material-icons true">check_box</i>
                             <span>回复后公开</span></label>
                     </div>
+                    <?php if (!empty(reCAPTCHA_key)) { ?>
+                        <div class="g-recaptcha" data-sitekey="6Ld8V7MfAAAAAHipmKV0PkRLJYo2o29G94q9LhE0" data-callback="reCaptchaCallBack">正在加载 reCaptcha 挑战…</div>
+                    <?php } ?>
                 </div>
             </div>
             <div class="bottom">
                 <div class="word">
-                    <?php if (!empty(reCAPTCHA_key)) { ?>
-                        <div class="g-recaptcha" data-sitekey="6Ld8V7MfAAAAAHipmKV0PkRLJYo2o29G94q9LhE0" data-callback="reCaptchaCallBack">正在加载 reCaptcha 挑战…</div>
-                    <?php } ?>
                     <p>请在此尽情吐槽 <?php echo my_name; ?>，但请确保您的言论符合法律法规和相关规定。</p>
                 </div>
                 <div class="buttons"><button class="bigButton" type="submit">发送</button></div>
