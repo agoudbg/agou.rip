@@ -37,6 +37,7 @@ $msgid = $_GET["msgid"];
                 <div class="word">
                     <p>点击即可快速选中凭据。</p>
                     <p>请妥善保管凭据，一旦丢失则无法查询回复，若泄露任何人都可以查看内容和回复。</p>
+                    <p><b>回复查询方法：</b>在 <?php echo site_name; ?> 首页点击放大镜按钮即可。</p>
                     <p>不过若你只是想骂 <?php echo my_name; ?>，并不想看<?php echo call; ?>的回复，丢掉凭据也许不是一个坏选择。</p>
                 </div>
             </div>

@@ -22,7 +22,7 @@ require("./mysql.php");
     <div class="titleBox">
         <h1><?php echo site_name; ?></h1>
         <div class="buttons">
-            <button onclick="window.location.href='check.php'"><i class="material-icons">search</i></button>
+            <button onclick="window.location.href='check.php'"><i class="material-icons" title="查询">search</i></button>
         </div>
     </div>
     <form action="submit.php" method="post">
