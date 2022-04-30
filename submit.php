@@ -7,7 +7,14 @@ if (!isset($_POST["text"]) || $_POST["text"] == "") {
     die();
 } else if (!empty($_POST["email"]) && !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     die(header("Location:index.php?tip=请输入正确的电子邮箱地址。"));
+} else
+if ((!empty(reCAPTCHA_key) && !isset($_POST['g-recaptcha-response']) || empty($_POST['g-recaptcha-response']))) {
+    die(header("Location:index.php?tip=抱歉，reCAPTCHA 验证参数错误。"));
 } else {
+    $captcha = recaptcha($_POST['g-recaptcha-response']);
+    if ($captcha['success'] == false) {
+        die(header("Location:index.php?tip=抱歉，reCAPTCHA 验证失败。"));
+    }
     $db = new CodyMySQL(mysql_host, mysql_port, mysql_user, mysql_pass, mysql_database);
     $sql = "SELECT `time` FROM `post` WHERE `ip`='" . sha256(getIP()) . "' ORDER BY time DESC";
     if (time() - $db->getrow($sql)["time"] < time_limit) {
@@ -91,4 +98,10 @@ function getIP()
     else
         $ip = "Unknown";
     return $ip;
+}
+
+function recaptcha($response)
+{
+    if (empty(reCAPTCHA_key)) return array("success" => true);
+    return json_decode(file_get_contents("https://www.recaptcha.net/recaptcha/api/siteverify?secret=" . reCAPTCHA_key . "&response=" . $response), true);
 }

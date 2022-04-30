@@ -15,6 +15,7 @@ require("./mysql.php");
     <meta name='format-detection' content='telephone=no'>
     <link rel="stylesheet" type="text/css" href="src/css/card.css">
     <link rel="stylesheet" type="text/css" href="src/css/page.css">
+    <script async src="https://recaptcha.net/recaptcha/api.js"></script>
 </head>
 
 <body class="cardBox">
@@ -56,6 +57,9 @@ require("./mysql.php");
             </div>
             <div class="bottom">
                 <div class="word">
+                    <?php if (!empty(reCAPTCHA_key)) { ?>
+                        <div class="g-recaptcha" data-sitekey="6Ld8V7MfAAAAAHipmKV0PkRLJYo2o29G94q9LhE0" data-callback="reCaptchaCallBack">正在加载 reCaptcha 挑战…</div>
+                    <?php } ?>
                     <p>请在此尽情吐槽 <?php echo my_name; ?>，但请确保您的言论符合法律法规和相关规定。</p>
                 </div>
                 <div class="buttons"><button class="bigButton" type="submit">发送</button></div>
